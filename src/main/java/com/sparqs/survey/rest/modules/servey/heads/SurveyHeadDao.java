@@ -3,8 +3,8 @@ package com.sparqs.survey.rest.modules.servey.heads;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
-import static com.sparqs.survey.rest.modules.servey.heads.SurveyHead.builder;
 import static java.util.Arrays.asList;
 import static java.util.UUID.fromString;
 
@@ -16,6 +16,10 @@ public class SurveyHeadDao {
   }
 
   private SurveyHead quickCreate(String title, boolean active) {
-    return builder().title(title + " Umfrage").id(fromString(title)).active(active).build();
+    return SurveyHead.builder()
+        .id(UUID.randomUUID())
+        .title(title + " Umfrage")
+        .active(active)
+        .build();
   }
 }

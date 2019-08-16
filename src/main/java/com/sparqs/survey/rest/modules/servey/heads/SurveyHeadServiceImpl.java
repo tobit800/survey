@@ -11,7 +11,7 @@ public class SurveyHeadServiceImpl implements SurveyHeadService {
     private SurveyHeadDao surveyHeadDao;
 
     @Override
-    public List<SurveyHead> getSurveyHead() {
+    public List<SurveyHead> getSurveyHeads() {
         return surveyHeadDao.getHeads();
     }
 }
