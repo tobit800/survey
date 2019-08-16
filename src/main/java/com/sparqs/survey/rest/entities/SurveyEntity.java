@@ -19,5 +19,10 @@ public class SurveyEntity {
   boolean active;
 
   @OneToMany(mappedBy = "surveyID", cascade = CascadeType.REMOVE) // Change after modelling questionresponse
-  List<QuestionEntity> question;
+  List<QuestionEntity> questionEntityList;
+
+  public void addQuestion(QuestionEntity questionEntity) {
+    boolean empty = questionEntityList.stream().filter(q -> q == questionEntity).findFirst().isEmpty();
+    questionEntityList.add(questionEntity);
+  }
 }
