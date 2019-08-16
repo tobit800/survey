@@ -6,5 +6,5 @@ import java.util.List;
  * For accessing the name/title of all Surveys.
  */
 public interface SurveyHeadService  {
-    List<SurveyHead> getSurveyHeads();
+    List<SurveyHeadDto> getSurveyHeads();
 }

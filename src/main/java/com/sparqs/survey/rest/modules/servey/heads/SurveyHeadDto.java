@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Data
 @Builder
-public class SurveyHead {
+public class SurveyHeadDto {
     UUID id;
     String title;
     boolean active;
