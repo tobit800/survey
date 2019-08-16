@@ -1,9 +1,6 @@
 package com.sparqs.survey.rest.entities;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Generated;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +10,8 @@ import java.util.UUID;
 @Builder
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class QuestionEntity {
   @Id @GeneratedValue @EqualsAndHashCode.Include
   UUID id;

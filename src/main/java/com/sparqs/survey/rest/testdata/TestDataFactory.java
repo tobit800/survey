@@ -30,25 +30,23 @@ public class TestDataFactory {
   public void doSomethingAfterStartup() {
     log.info("Create some test data now ...");
 
-    SurveyEntity surveyEntity = quickCreate("Persistent Demo", true);
+    SurveyEntity surveyEntity = quickCreate("PersistentDemo", true);
     IntStream.of(10).forEach(nr -> surveyEntity.addQuestion(quickCreate(surveyEntity, nr)));
     surveyRepository.save(surveyEntity);
   }
 
-  private QuestionEntity quickCreate(SurveyEntity surveyEntity, int nr) {
-    return QuestionEntity.builder()
-        .id(UUID.randomUUID())
-        .sortOrder(nr)
-        .questionText(randomAlphabetic(80))
-        .responseType("Demo")
+  private SurveyEntity quickCreate(String title, boolean active) {
+    return SurveyEntity.builder()
+        .title(title)
+        .active(active)
         .build();
   }
 
-  private SurveyEntity quickCreate(String title, boolean active) {
-    return SurveyEntity.builder()
-        .id(UUID.randomUUID())
-        .title(title + " Umfrage")
-        .active(active)
-        .build();
+  private QuestionEntity quickCreate(SurveyEntity surveyEntity, int nr) {
+    return QuestionEntity.builder()
+            .sortOrder(nr)
+            .questionText(randomAlphabetic(80))
+            .responseType("Demo")
+            .build();
   }
 }

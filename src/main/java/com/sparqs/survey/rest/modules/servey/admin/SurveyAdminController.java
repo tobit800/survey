@@ -1,19 +1,16 @@
-package com.sparqs.survey.rest.modules.servey.full;
+package com.sparqs.survey.rest.modules.servey.admin;
 
 import com.sparqs.survey.rest.entities.SurveyEntity;
-import com.sparqs.survey.rest.modules.servey.heads.SurveyHeadDto;
 import com.sparqs.survey.rest.repositories.SurveyRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
 
 @Slf4j
 @RestController
-public class SurveyFullController {
+public class SurveyAdminController {
 
   public static final String API_ADMIN_SURVEY = "/api/admin/survey";
   public static final String API_ADDMIN_SURVEY_ID = API_ADMIN_SURVEY + "/{uuid}";
